@@ -1,3 +1,5 @@
+// Configuration for TMDB API
+// Read more about the API here: https://developers.themoviedb.org/
 
 const API_URL: string = 'https://api.themoviedb.org/3/';
 const API_KEY: string | undefined = process.env.API_KEY;
