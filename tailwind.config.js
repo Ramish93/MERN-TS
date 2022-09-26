@@ -3,6 +3,9 @@ module.exports = {
   content: ['./pages/**/*.{js, ts, jsx, tsx}', './components/**/*.{js, ts, tsx, jsx}'],
   theme: {
     extend: {},
+    fontFamily: {
+      raleway: ["Raleway", "sans-serif"]
+    }
   },
   plugins: [],
 }
