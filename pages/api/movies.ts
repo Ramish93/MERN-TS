@@ -1,15 +1,17 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+// API Urls
+import { SEARCH_BASE_URL, POPULAR_BASE_URL } from '../../config';
+// Basic fetch function
+import { basicFetch } from '../../api/fetchFunctions';
+// Types
+import type { NextApiRequest, NextApiResponse } from 'next';
+import type { Movies } from '../../api/types';
 
-import { SEARCH_BASE_URL, POPULAR_BASE_URL } from "../../config";
-import { basicFetch } from "../../api/fetchFunctions";
-import type { Movies } from "../../api/types";
+export default async function handler(req: NextApiRequest, res: NextApiResponse<Movies>) {
+  const { page, search } = req.query; // Grab search params
 
+  const endpoint = search ? `${SEARCH_BASE_URL}${search}&page=${page}` : `${POPULAR_BASE_URL}&page=${page}`;
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse<Movies>){
-    const {page, search} = req.query;
+  const data = await basicFetch<Movies>(endpoint);
 
-    const endpoint: string = search ?  `${SEARCH_BASE_URL}${search}&page=${page}` : `${POPULAR_BASE_URL}&page=${page}`
-
-    const data = await basicFetch<Movies>(endpoint)
-    res.status(200).json(data)
+  res.status(200).json(data);
 }
