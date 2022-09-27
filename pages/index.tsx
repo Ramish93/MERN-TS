@@ -19,7 +19,7 @@ const Home: NextPage = () => {
 
   return (
     <main className='relative h-screen overflow-y-scroll ' >
-      <Header />
+      <Header setQuery={setQuery} />
       <Hero />
       <Grid />
       <Card />
