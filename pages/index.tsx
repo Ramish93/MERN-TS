@@ -40,13 +40,13 @@ const Home: NextPage = () => {
                 <Card 
                   imgUrl={movie.poster_path ? IMAGE_BASE_URL+ POSTER_SIZE+movie.poster_path: '/no_image.jpg'} 
                   title={movie.original_title}
-                  
+
                 />
               </div> )) : 
             null}
         </Grid>
      
-      <Spinner />
+      <Spinner  />
      </main>
   )
 }
