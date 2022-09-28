@@ -4,11 +4,11 @@ import type { NextPage } from 'next'
 
 import { IMAGE_BASE_URL, BACKDROP_SIZE, POSTER_SIZE } from '../config'
 import { useFetchMovies } from '../api/fetchHooks'
-import Header from './components/Header/Header'
-import Hero from './components/Hero/Hero'
-import Spinner from './components/Spinner/Spinner'
-import Card from './components/Card/Card'
-import Grid from './components/Grid/Grid'
+import Header from '../components/Header/Header'
+import Hero from '../components/Hero/Hero'
+import Spinner from '../components/Spinner/Spinner'
+import Card from '../components/Card/Card'
+import Grid from '../components/Grid/Grid'
 
 
 const Home: NextPage = () => {
@@ -44,7 +44,7 @@ const Home: NextPage = () => {
           data.pages.map(page => 
             page.results.map(movie =>
               <Link key={movie.id} href={`/${movie.id}`}>
-                <div key={movie.id}> 
+                <div className='cursor-pointer hover:opacity-80 duration-300 '> 
                   <Card 
                     imgUrl={movie.poster_path ? IMAGE_BASE_URL+ POSTER_SIZE+movie.poster_path: '/no_image.jpg'} 
                     title={movie.original_title}
