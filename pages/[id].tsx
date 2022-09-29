@@ -22,7 +22,18 @@ const Movie: NextPage<Props> = ({movie, cast, directors}) => (
     <main>
         <Header />
         <BreadCrumb title={movie.original_title} />
-        <MovieInfo />
+        <MovieInfo 
+            thumbUrl={movie.poster_path ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path : '/no_image.jpg'} 
+            rating={movie.vote_average}
+            year={movie.release_date.split('-')[0]}
+            backgroundImgUrl={movie.backdrop_path ? IMAGE_BASE_URL + BACKDROP_SIZE + movie.backdrop_path : '/no_background.jpg'}
+            title={movie.original_title}
+            summary={movie.overview}
+            directors={directors}
+            time={movie.runtime}
+            budget={movie.budget}
+            revenue={movie.revenue}
+            />
         <Grid>
             <Card />
 
