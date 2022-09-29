@@ -21,7 +21,7 @@ type Props = {
 const Movie: NextPage<Props> = ({movie, cast, directors}) => (
     <main>
         <Header />
-        <BreadCrumb />
+        <BreadCrumb title={movie.original_title} />
         <MovieInfo />
         <Grid>
             <Card />

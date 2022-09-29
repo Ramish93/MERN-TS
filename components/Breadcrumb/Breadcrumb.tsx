@@ -12,7 +12,7 @@ const BreadCrumb = ({title}: Props) =>
         <Link href={'/'}>
           <span className="hover:opacity-80 cursor-pointer duration-300">Home</span>
         </Link>
-          <span className="blcok px-2 ">|</span>
+          <span className="blcok px-2 "> | </span>
           <span className="font-bold truncate">{title}</span>
       </div>
     </div>
